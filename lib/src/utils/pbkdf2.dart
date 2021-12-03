@@ -26,6 +26,6 @@ class PBKDF2 {
     _derivator.reset();
     _derivator
         .init(new Pbkdf2Parameters(salt, iterationCount, desiredKeyLength));
-    return _derivator.process(new Uint8List.fromList(mnemonic.codeUnits));
+    return _derivator.process(new Uint8List.fromList(utf8.encode(mnemonic)));
   }
 }
